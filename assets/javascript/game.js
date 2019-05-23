@@ -3,7 +3,6 @@ var letters = ["q","w","w","e","r","t","y","u","i","o","p","a","s","d","f","g","
 var win = 0;
 var loss = 0;
 var playerguess;
-var playerguessarr = [];
 var comguess;
 var tries = 10;
 
@@ -18,7 +17,7 @@ document.onkeypress = function(input) {
             win++;
             tries = 10;
             document.getElementById("wins").textContent = ("Wins: " + win);
-            document.getElementById("remain").textContent = ("Guesses left: 10");
+            document.getElementById("remain").textContent = ("Guesses left: " + tries);
             document.getElementById("guess").textContent = ("Your guesses so far:");
             document.getElementById("notif").textContent = (" ");
             comguess = letters[Math.round(Math.random() * (letters.length - 1))];
@@ -29,6 +28,16 @@ document.onkeypress = function(input) {
             tries--;
             document.getElementById("remain").textContent = ("Guesses left: " + tries);
         }
+    }
+    if (tries === 0) {
+        alert("You have run out of guesses! You lose! The letter was " + comguess);
+        loss++;
+        document.getElementById("loss").textContent = ("Losses: " + loss);
+        document.getElementById("notif").textContent = (" ");
+        document.getElementById("guess").textContent = ("Your guesses so far:");
+        comguess = letters[Math.round(Math.random() * (letters.length - 1))];
+        tries = 10;
+        document.getElementById("remain").textContent = ("Guesses left: " + tries);
     }
 }
 
