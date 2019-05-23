@@ -2,5 +2,15 @@ var letters = ["q","w","w","e","r","t","y","u","i","o","p","a","s","d","f","g","
 
 var win = 0;
 var loss = 0;
-var guess;
+var playerguess;
+var comguess;
 var gameon = true;
+
+comguess = letters[Math.round(Math.random() * (letters.length - 1))]
+
+document.onkeypress = function(input) {
+    playerguess = input.key.toLowerCase();
+    
+    console.log(comguess)
+}
+
