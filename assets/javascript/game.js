@@ -21,6 +21,7 @@ document.onkeypress = function(input) {
             document.getElementById("guess").textContent = ("Your guesses so far:");
             document.getElementById("notif").textContent = (" ");
             comguess = letters[Math.round(Math.random() * (letters.length - 1))];
+            console.log(comguess)
         }
         else if (playerguess != comguess) {
             document.getElementById("guess").textContent += (" " + playerguess)
@@ -29,7 +30,7 @@ document.onkeypress = function(input) {
             document.getElementById("remain").textContent = ("Guesses left: " + tries);
         }
     }
-    if (tries === 0) {
+    else if (tries === 0) {
         alert("You have run out of guesses! You lose! The letter was " + comguess);
         loss++;
         document.getElementById("loss").textContent = ("Losses: " + loss);
@@ -38,6 +39,7 @@ document.onkeypress = function(input) {
         comguess = letters[Math.round(Math.random() * (letters.length - 1))];
         tries = 10;
         document.getElementById("remain").textContent = ("Guesses left: " + tries);
+        console.log(comguess)
     }
 }
 
