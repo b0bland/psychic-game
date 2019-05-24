@@ -1,0 +1,13 @@
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 30px 25px;
+    line-height: 1.3;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+#notif {
+    color: #e03a1c;
+}
